@@ -1,0 +1,33 @@
+Algorithm:
+    1. Initialization: Initialize an array to represent the cats, with each element initialized to False, indicating no hat.
+    2. Iteration: Iterate through each circle from 1 to the total number of circles.
+        a. For each circle, iterate through the cats, starting from the (circle - 1)th cat, with a step of the circle size.
+        b. Toggle the state of the cat's hat (True to False or False to True) based on its current state.
+    3. Final Result: After all iterations, identify the cats that have hats on their heads and store their positions in a list.
+    4. Return Result: Return the list of cats with hats.
+
+Pseudo-code for the algorithm:
+function get_cats_with_hats(array_of_cats):
+    cats_with_hats_on = []
+
+    for each circle from 1 to circles:
+        for each cat in range(circle - 1, cats, circle):
+            toggle_hat_state(array_of_cats[cat])
+
+    for each cat in range(cats):
+        if array_of_cats[cat]:
+            cats_with_hats_on.append(cat + 1)
+
+    return cats_with_hats_on
+
+function toggle_hat_state(cat):
+    if cat is False:
+        cat = True
+    else:
+        cat = False
+
+
+Complexity analysis:
+    1. The outer loop runs 'circles' times.
+    2. The inner loop runs 'cats' times in the worst case.
+    3. The overall time complexity is O(circles * cats).
